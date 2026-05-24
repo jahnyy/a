@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Сервіси Інтернету</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header><h1>Основні сервіси Інтернету</h1><nav>
+    <a href="index.html">Головна</a>
+    <a href="history.html">Історія</a>
+    <a href="hardware.html">Апаратні засоби</a>
+    <a href="services.html">Сервіси</a>
+    <a href="impact.html">Вплив на людину</a>
+  </nav></header>
+  <main>
+    <h2>Огляд сервісів</h2>
+    <ul>
+      <li><strong>WWW:</strong> веб-сайти, HTTP/HTTPS, веб-сервери.</li>
+      <li><strong>Електронна пошта:</strong> SMTP, IMAP, POP3.</li>
+      <li><strong>Пошукові системи:</strong> індексація, ранжування.</li>
+      <li><strong>Соцмережі і месенджери.</strong></li>
+      <li><strong>Хмарні сервіси:</strong> SaaS, IaaS, PaaS.</li>
+      <li><strong>Стримінг, VoIP, онлайн-торгівля, е-банкінг.</strong></li>
+    </ul>
+    <h3>Порівняльна таблиця сервісів Інтернету</h3>
+
+    <label for="service-filter">Фільтр за видом сервісу:</label>
+    <select id="service-filter" aria-label="Фільтр сервісів">
+      <option value="all">Усі</option>
+      <option value="web">Веб</option>
+      <option value="email">Пошта</option>
+      <option value="cloud">Хмара</option>
+      <option value="streaming">Стримінг</option>
+      <option value="voip">VoIP</option>
+      <option value="ecommerce">E‑commerce</option>
+    </select>
+    
+    <div class="table-wrap" role="region" aria-labelledby="table-title">
+      <h4 id="table-title" class="visually-hidden">Порівняльна таблиця сервісів</h4>
+      <table class="services-table">
+        <caption class="visually-hidden">Порівняння інтернет-сервісів за призначенням, прикладами і ризиками</caption>
+        <thead>
+          <tr>
+            <th scope="col">Сервіс</th>
+            <th scope="col">Призначення</th>
+            <th scope="col">Приклад протоколу / технології</th>
+            <th scope="col">Переваги</th>
+            <th scope="col">Ризики / зауваження</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-type="web">
+            <th scope="row">Веб</th>
+            <td>Публікація інформації, інтерфейси користувача</td>
+            <td>HTTP/HTTPS, HTML, REST API</td>
+            <td>Широка доступність, інтерактивність</td>
+            <td>Вразливості (XSS, CSRF), приватність</td>
+          </tr>
+          <tr data-type="email">
+            <th scope="row">Електронна пошта</th>
+            <td>Обмін повідомленнями, офіційна кореспонденція</td>
+            <td>SMTP, IMAP, POP3, STARTTLS</td>
+            <td>Стандартизовано, поширено</td>
+            <td>Спам, фішинг, шифрування end‑to‑end не скрізь</td>
+          </tr>
+          <tr data-type="cloud">
+            <th scope="row">Хмарні сервіси</th>
+            <td>Обчислення, зберігання, SaaS/IaaS/PaaS</td>
+            <td>HTTPS, OAuth, API, контейнерні технології</td>
+            <td>Масштабованість, економія ресурсів</td>
+            <td>Залежність від провайдера, питання конфіденційності</td>
+          </tr>
+          <tr data-type="streaming">
+            <th scope="row">Стримінг</th>
+            <td>Передача аудіо/відео в реальному часі</td>
+            <td>HLS, DASH, RTMP</td>
+            <td>Зручність споживання контенту</td>
+            <td>Високе споживання трафіку, затримки</td>
+          </tr>
+          <tr data-type="voip">
+            <th scope="row">VoIP / Месенджери</th>
+            <td>Голосові/відеодзвінки, миттєві повідомлення</td>
+            <td>SIP, WebRTC</td>
+            <td>Дешеві дзвінки, інтеграція з додатками</td>
+            <td>Якість зв’язку залежить від мережі, безпека</td>
+          </tr>
+          <tr data-type="ecommerce">
+            <th scope="row">Онлайн-торгівля</th>
+            <td>Електронні платежі, магазини</td>
+            <td>HTTPS, PCI‑DSS практики, API платіжних шлюзів</td>
+            <td>Зручність покупок, широкий ринок</td>
+            <td>Мошенництво, безпека платежів</td>
+          </tr>
+        </tbody>
+      </table>
+      <script>
+        document.getElementById('service-filter').addEventListener('change', function(){
+          var val = this.value;
+          document.querySelectorAll('.services-table tbody tr').forEach(function(tr){
+            tr.style.display = (val === 'all' || tr.dataset.type === val) ? '' : 'none';
+          });
+        });
+        </script>        
+    </div>    
+  </main>
+    <footer>
+    <p>Автор: Лука Ніконов. Дата створення: 24 травня 2026</p>
+  </footer>
+</body>
+</html>
